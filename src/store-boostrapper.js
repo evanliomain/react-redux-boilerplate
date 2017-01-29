@@ -1,4 +1,4 @@
-/* global module, require */
+/* global module, require, process */
 
 import { createStore } from 'redux';
 
@@ -9,7 +9,7 @@ export default function() {
   const store = createStore(reducers);
 
   // Hot Module Replacement API
-  if (module.hot) {
+  if ('production' !== process.env.NODE_ENV && module.hot) {
     hotReload(store);
   }
 

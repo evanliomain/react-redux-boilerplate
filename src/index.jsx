@@ -1,4 +1,4 @@
-/* global module, require */
+/* global module, require, process */
 
 import React from 'react';
 
@@ -14,7 +14,7 @@ const store = storeBoostrapper();
 window.onload = () => renderComponent(App, store);
 
 // Hot Module Replacement API
-if (module.hot) {
+if ('production' !== process.env.NODE_ENV && module.hot) {
   module.hot.accept('./components/App', () => hotReload(store));
 }
 
@@ -27,6 +27,14 @@ function hotReload(storeInstance) {
 }
 
 function renderComponent(Component, storeInstance) {
+  if ('production' === process.env.NODE_ENV) {
+    return render(
+      <Provider store={storeInstance}>
+        <Component />
+      </Provider>,
+      document.getElementById('app')
+    );
+  }
   return render(
     <AppContainer>
       <Provider store={storeInstance}>

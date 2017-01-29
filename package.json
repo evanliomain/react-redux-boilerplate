@@ -10,6 +10,7 @@
   "author": "Evan Liomain <evan.liomain@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack --define process.env.NODE_ENV=\"'production'\"",
     "start": "webpack-dev-server",
     "lint:js": "eslint \"src/**.{js,jsx}\""
   },
