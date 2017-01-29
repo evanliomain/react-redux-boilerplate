@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "lint": "eslint \"src/**.{js,jsx}\""
+    "lint:js": "eslint \"src/**.{js,jsx}\""
   },
   "dependencies": {
     "babel-cli": "^6.22.2",
@@ -31,6 +31,7 @@
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.7.1",
     "webpack": "2",
     "webpack-dev-server": "2"
   }
