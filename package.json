@@ -1,0 +1,34 @@
+{
+  "name": "react-redux-boilerplate",
+  "version": "1.0.0",
+  "description": "A react redux boilerplate",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/evanliomain/react-redux-boilerplate.git",
+    "type": "git"
+  },
+  "author": "Evan Liomain <evan.liomain@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^1.2.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "style-loader": "^0.13.1",
+    "webpack": "2",
+    "webpack-dev-server": "2"
+  }
+}
