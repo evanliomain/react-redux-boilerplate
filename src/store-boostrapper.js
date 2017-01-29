@@ -1,3 +1,5 @@
+/* global module, require */
+
 import { createStore } from 'redux';
 
 import reducers from './reducers';

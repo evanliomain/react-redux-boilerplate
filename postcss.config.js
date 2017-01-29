@@ -1,5 +1,7 @@
+/* eslint-env node */
+
 module.exports = {
-  plugins: [
+  plugins : [
     require('autoprefixer')
   ]
-}
+};

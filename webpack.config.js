@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const path    = require('path'),
       webpack = require('webpack');
 
@@ -26,16 +28,16 @@ module.exports = {
   devtool   : 'inline-source-map',
   devServer : {
     // enable HMR on the server
-    hot: true,
+    hot : true,
 
     contentBase : path.resolve(__dirname, './src'),
 
     // match the output `publicPath`
-    publicPath: '/assets'
+    publicPath : '/assets'
   },
 
   resolve : {
-    extensions: ['.js', '.jsx']
+    extensions : ['.js', '.jsx']
   },
 
   module : {
@@ -44,11 +46,11 @@ module.exports = {
       exclude : /node_modules/,
       use     : [{
         loader  : 'babel-loader',
-        options : { presets : ['stage-3', 'react'] },
+        options : { presets : ['stage-3', 'react'] }
       }]
     }, {
       test : /\.css$/,
-      use  : [ 'style-loader', 'css-loader', 'postcss-loader']
+      use  : ['style-loader', 'css-loader', 'postcss-loader']
     }, {
       test : /\.less$/,
       use  : [
@@ -64,7 +66,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
 
-    new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin()
     // prints more readable module names in the browser console on HMR updates
   ]
 };
