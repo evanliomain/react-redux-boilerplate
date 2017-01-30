@@ -7,17 +7,6 @@ const path    = require('path'),
 module.exports = {
   context : path.resolve(__dirname, '.'),
   entry   : [
-    // activate HMR for React
-    'react-hot-loader/patch',
-
-    // bundle the client for webpack-dev-server
-    // and connect to the provided endpoint
-    'webpack-dev-server/client?http://localhost:8080',
-
-    // bundle the client for hot reloading
-    // only- means to only hot reload for successful updates
-    'webpack/hot/only-dev-server',
-
     // the entry point of our app
     './src/index.jsx'
   ],
@@ -27,11 +16,9 @@ module.exports = {
     publicPath : '/assets'
   },
 
-  devtool   : 'cheap-module-eval-source-map',
+  // devtool   : 'inline-source-map',
+  devtool   : 'source-map',
   devServer : {
-    // enable HMR on the server
-    hot : true,
-
     contentBase : path.resolve(__dirname, './src'),
 
     // match the output `publicPath`
@@ -48,7 +35,7 @@ module.exports = {
       exclude : /node_modules/,
       use     : [{
         loader  : 'babel-loader',
-        options : { presets : ['stage-3', 'react'] }
+        options : { presets : ['latest', 'stage-3', 'react'] }
       }]
     }, {
       test : /\.css$/,
@@ -65,10 +52,33 @@ module.exports = {
   },
 
   plugins : [
-    // enable HMR globally
-    new webpack.HotModuleReplacementPlugin(),
-
-    // prints more readable module names in the browser console on HMR updates
-    new webpack.NamedModulesPlugin()
+    new webpack.LoaderOptionsPlugin({
+      minimize : true,
+      debug    : false
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      debug     : false,
+      minimize  : true,
+      sourceMap : true,
+      output    : {
+        screw_ie8 : true,
+        comments  : false
+      },
+      compressor : {
+        dead_code    : true,
+        drop_console : true,
+        warnings     : false,
+        keep_fnames  : true
+      },
+      compress : {
+        screw_ie8 : true
+      },
+      beautify : false,
+      mangle   : {
+        screw_ie8   : true,
+        keep_fnames : true
+      },
+      comments : false
+    })
   ]
 };
