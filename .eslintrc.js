@@ -3,11 +3,13 @@ module.exports = {
     "browser": true,
     "es6": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimantalObjectRestSpread": true
     }
   },
   "plugins": [

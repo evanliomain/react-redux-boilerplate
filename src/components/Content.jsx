@@ -23,5 +23,5 @@ export class Content extends Component {
 
 Content.propTypes = {
   scroll         : React.PropTypes.number,
-  onScrollChange : PropTypes.func.isRequired,
+  onScrollChange : PropTypes.func.isRequired
 };

@@ -12,10 +12,13 @@
   "scripts": {
     "build": "webpack --config webpack.config.prod.js --optimize-minimize --define process.env.NODE_ENV=\"'production'\"",
     "start": "webpack-dev-server",
-    "lint:js": "eslint \"src/**.{js,jsx}\""
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:style": "stylelint \"**/*.less\"",
+    "lint": "npm-run-all --parallel lint:*"
   },
   "dependencies": {
     "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
@@ -26,6 +29,7 @@
     "eslint-plugin-react": "^6.9.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
+    "npm-run-all": "^4.0.1",
     "postcss-loader": "^1.2.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

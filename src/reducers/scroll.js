@@ -16,4 +16,4 @@ export const scroll = (
   default:
     return state;
   }
-}
+};
