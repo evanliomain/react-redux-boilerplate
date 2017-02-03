@@ -12,7 +12,11 @@ A boilerplate with this stack :
   * css module
   * less
 
-## Instalation
+## Preview
+
+See production live demo at : https://evanliomain.github.io/react-redux-boilerplate/
+
+## Installation
 
 ```shell
 yarn
