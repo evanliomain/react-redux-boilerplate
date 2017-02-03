@@ -61,7 +61,16 @@ module.exports = {
         'less-loader',
         'postcss-loader'
       ]
-    }]
+    }
+
+    // ,  {
+    //   test : /\.svg/,
+    //   use  : [{
+    //     loader  : 'svg-url-loader',
+    //     options : {}
+    //   }]
+    // }
+    ]
   },
 
   plugins : [

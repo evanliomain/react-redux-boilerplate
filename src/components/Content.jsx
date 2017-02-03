@@ -1,11 +1,24 @@
 import React, { Component, PropTypes } from 'react';
 
+import HeaderContainer from '../containers/HeaderContainer';
+
 import { className } from './Content.less';
+
+
+import { logo } from './Logo';
+
 
 export class Content extends Component {
 
   render() {
-    return <div className={className}>Hello World {this.props.scroll}</div>;
+    return <div className={className}>
+      <HeaderContainer logo={logo}>
+        React Redux boilerplate {this.props.scroll}
+      </HeaderContainer>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste officia cum ratione, sed modi possimus, odio odit voluptatum quaerat id fuga, ad nulla consectetur eos ipsam quod deleniti porro soluta.
+      </div>
+    </div>;
   }
 
   handleScroll(event) {
@@ -22,6 +35,6 @@ export class Content extends Component {
 }
 
 Content.propTypes = {
-  scroll         : React.PropTypes.number,
+  scroll         : PropTypes.number,
   onScrollChange : PropTypes.func.isRequired
 };

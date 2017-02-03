@@ -203,7 +203,7 @@ module.exports = {
     "no-trailing-spaces" : "error", //disallow trailing whitespace at the end of lines
     "no-whitespace-before-property" : "error",//disallow whitespace before properties
     "object-curly-spacing" : ["error", "always"], //enforce consistent spacing inside braces
-    "one-var" : "error", //enforce variables to be declared either together or separately in functions
+    // "one-var" : "error", //enforce variables to be declared either together or separately in functions
     "one-var-declaration-per-line" : "error", //require or disallow newlines around var declarations
     "operator-assignment" : ["error", "always"], //require or disallow assignment operator shorthand where possible
     "operator-linebreak" : ["error", "after"], //enforce consistent linebreak style for operators
@@ -211,7 +211,7 @@ module.exports = {
     "quotes" : ["error", "single", { "allowTemplateLiterals": true }], //enforce the consistent use of either backticks, double, or single quotes
     "semi" : "error", //require or disallow semicolons instead of ASI
     "semi-spacing" : ["error", { "before": false, "after": true }], //enforce consistent spacing before and after semicolons
-    "sort-vars" : "error", // TODO: see to integrate this rule //require variables within the same declaration block to be sorted
+    //"sort-vars" : "error", // TODO: see to integrate this rule //require variables within the same declaration block to be sorted
     "space-before-blocks" : "error", //enforce consistent spacing before blocks
     "space-before-function-paren" : ["error", "never"], //enforce consistent spacing before function definition opening parenthesis
     "space-in-parens" : ["error", "never"], //enforce consistent spacing inside parentheses
