@@ -52,25 +52,34 @@ module.exports = {
       }]
     }, {
       test : /\.css$/,
-      use  : ['style-loader', 'css-loader', 'postcss-loader']
+      use  : [
+        'style-loader',
+        {
+          loader  : 'css-loader',
+          options : {
+            modules        : true,
+            importLoaders  : 1,
+            localIdentName : '[path][name]__[local]--[hash:base64:5]'
+          }
+        },
+        'postcss-loader'
+      ]
     }, {
       test : /\.less$/,
       use  : [
         'style-loader',
-        { loader : 'css-loader', options : { importLoaders : 1 } },
+        {
+          loader  : 'css-loader',
+          options : {
+            modules        : true,
+            importLoaders  : 1,
+            localIdentName : '[path][name]__[local]--[hash:base64:5]'
+          }
+        },
         'less-loader',
         'postcss-loader'
       ]
-    }
-
-    // ,  {
-    //   test : /\.svg/,
-    //   use  : [{
-    //     loader  : 'svg-url-loader',
-    //     options : {}
-    //   }]
-    // }
-    ]
+    }]
   },
 
   plugins : [
